@@ -15,7 +15,7 @@ import "./tasks/deploy-age-check"
 
 function getNetworks(): NetworksUserConfig | undefined {
   const infuraApiKey = process.env.INFURA_API_KEY
-  const TESTNET_PRIVATE_KEY = KEYS.privateKey
+  const TESTNET_PRIVATE_KEY = KEYS.testnet_privateKey
   // const MAINNET_PRIVATE_KEY = KEYS.privateKey
 
   const selectedNetwork = "polygon" // check chain.ts file to deploy on particular network
@@ -23,7 +23,7 @@ function getNetworks(): NetworksUserConfig | undefined {
 
   return {
     testnet: {
-      url: chainConfig[selectedNetwork].testnet.rpc[0],
+      url: 'https://polygon-testnet-rpc.allthatnode.com:8545',
       accounts,
       allowUnlimitedContractSize: true
     },

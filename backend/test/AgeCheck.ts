@@ -46,7 +46,7 @@ describe("AgeCheck", () => {
       proof.pi_c[1]
     ]
 
-    const transaction = ageCheckContract.connect(accounts[0]).verifyAge(solidityProof, publicSignals)
+    const transaction = ageCheckContract.connect(accounts[0]).verifyUsingGroth(solidityProof, publicSignals)
     console.log("transaction", transaction)
     //    await expect(transaction).to.be.revertedWith("Below Age limit")
 
